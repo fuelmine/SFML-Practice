@@ -1,21 +1,31 @@
 #include <SFML/Graphics.hpp>
+#include <stdexcept>
+#include <unordered_map>
+#include <vector>
+#include <memory>
+#include <string>
+
 
 int main()
 {
-	sf::RenderWindow window( sf::VideoMode( { 200, 200 } ), "SFML works!" );
-	sf::CircleShape shape( 100.f );
-	shape.setFillColor( sf::Color::Green );
+	sf::RenderWindow window(sf::VideoMode({100, 100}), "SFML Test");
 
-	while ( window.isOpen() )
+	while(window.isOpen())
 	{
-		while ( const std::optional event = window.pollEvent() )
+		while(auto event = window.pollEvent())
 		{
-			if ( event->is<sf::Event::Closed>() )
+			if(event->is<sf::Event::Closed>())
+			{
 				window.close();
+			}
 		}
-
 		window.clear();
-		window.draw( shape );
 		window.display();
 	}
+
+	return 0;
 }
+
+
+
+
