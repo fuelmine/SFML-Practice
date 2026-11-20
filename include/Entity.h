@@ -13,5 +13,8 @@ public:
 
     void setVelocity(const sf::Vector2f& velocity);
 
-    const sf::Velocity& getVelocity() const;
+    const sf::Vector2f& getVelocity() const;
+
+private:
+    virtual void updateCurrent(sf::Time deltaTime);
 };

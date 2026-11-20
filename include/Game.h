@@ -17,6 +17,6 @@ private:
 
     void render();
 
-    void update();
+    void update(sf::Time deltaTime);
 
 };
